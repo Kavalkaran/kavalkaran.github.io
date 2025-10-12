@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Athul Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffffcc;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #ddd;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #1f1f1f;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #0077ff;
+    }
+
+    .projects {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project {
+      background: #ffffffdd;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    .project h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .project a {
+      margin-top: 15px;
+      display: inline-block;
+      background: #0077ff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .project a:hover {
+      background: #005fe0;
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: white;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Kavalkaran</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="rakshassan">Rakshassan</a></li>
+        <li><a href="e-akshaya">Malayalli</a></li>
+        <li><a href="redtiger">Red tiger</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="projects">
+    <div class="project" id="tool1">
+     
+      <h3>Open source code</h3>
+      <p>Kavalkaran is a open source platform. But remixing and publish it needed permission of Its owners.</p>
+      <a href="https://github.com/athulweb/kavalkaran">View code</a>
+    </div>
+
+    <div class="project" id="secure" >
+      <h3>Your opinion</h3>
+      <p>We respect your opinion and you have right to say and we have duty to hear it. Enter your opinion and ideas we will use it and that is help full for tomorrows world.</p>
+      <a href="https://github.com/athulweb/kavalkaran/discussions/1">Ask your opinion</a>
+    </div>
+
+    <div class="project" id="bhram">
+      
+      <h3>view website</h3>
+      <p>If you have dont visited our site before. so you are late. please visit our site </p>
+      <a href="https://athulweb.github.io/kavalkaran/">Visit kavalkaran</a>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
