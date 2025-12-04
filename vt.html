@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirusTotal URL Scanner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .safe { background-color: #d4edda; color: #155724; }
+        .malicious { background-color: #f8d7da; color: #721c24; }
+        .suspicious { background-color: #fff3cd; color: #856404; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>VirusTotal URL Scanner</h1>
+    <p>Enter a URL to scan:</p>
+    <input type="text" id="inputURL" placeholder="https://example.com">
+    <button onclick="scanURL()">Scan</button>
+
+    <div id="result" class="">Results will appear here...</div>
+
+    <script>
+        async function scanURL() {
+            const url = document.getElementById("inputURL").value.trim();
+            const resultEl = document.getElementById("result");
+
+            if (!url) {
+                resultEl.textContent = "Please enter a URL.";
+                resultEl.className = "suspicious";
+                return;
+            }
+
+            resultEl.textContent = "Scanning... Please wait.";
+            resultEl.className = "";
+
+            try {
+                const response = await fetch("https://vt-backend-hjwh.onrender.com/scan", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ url })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                // Extract summary stats
+                const stats = data.data?.attributes?.stats || {};
+                const { harmless=0, malicious=0, suspicious=0, timeout=0, undetected=0 } = stats;
+
+                // Set result color
+                if (malicious > 0) resultEl.className = "malicious";
+                else if (suspicious > 0) resultEl.className = "suspicious";
+                else resultEl.className = "safe";
+
+                // Build summary text
+                let summaryHTML = `
+                    <strong>URL:</strong> ${url}<br>
+                    <strong>Summary:</strong> Harmless: ${harmless}, Malicious: ${malicious}, Suspicious: ${suspicious}, Timeout: ${timeout}, Undetected: ${undetected}
+                `;
+
+                // Extract per-engine results (if available)
+                const engines = data.data?.attributes?.last_analysis_results || null;
+
+                let tableHTML = '';
+                if (engines) {
+                    tableHTML = `<table>
+                        <tr><th>Engine</th><th>Category</th><th>Result</th></tr>`;
+
+                    for (const [engine, info] of Object.entries(engines)) {
+                        tableHTML += `
+                            <tr>
+                                <td>${engine}</td>
+                                <td>${info.category}</td>
+                                <td>${info.result || '-'}</td>
+                            </tr>
+                        `;
+                    }
+                    tableHTML += `</table>`;
+                }
+
+                resultEl.innerHTML = summaryHTML + tableHTML;
+
+            } catch (error) {
+                resultEl.textContent = "Error: " + error.message;
+                resultEl.className = "malicious";
+            }
+        }
+    </script>
+</body>
+</html>
