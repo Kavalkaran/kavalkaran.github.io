@@ -1,194 +1,215 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Kavalkaran</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<title>Kavalkaran | Public Interest Cybersecurity Platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" href="icons/android-chrome-512x512.png">
+<link rel="icon" type="image/png" href="icons/android-chrome-192x192.png">
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #f8f9fa, #e9ecef);
-      color: #222;
-      line-height: 1.6;
-    }
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    header {
-      background: #ffffffcc;
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #ddd;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+<!-- AOS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: bold;
-      color: #1f1f1f;
-    }
 
-    .menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-      display: none;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 15px;
-      list-style: none;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #0077ff;
-    }
-
-    .projects {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .project {
-      background: #ffffffdd;
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    .project img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    }
-
-    .project h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
-    .project p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .project a {
-      margin-top: 15px;
-      display: inline-block;
-      background: #0077ff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-
-    .project a:hover {
-      background: #005fe0;
-    }
-
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 10px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li {
-        text-align: center;
-        padding: 10px 0;
-      }
-    }
-  </style>
+<!-- STYLE -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/features.css">
+<link rel="stylesheet" href="css/btn.css">
+<link rel="stylesheet" href="css/zig-zag.css">
+<link rel="stylesheet" href="css/mobile.css">
 </head>
-<body>
+<body data-barba="wrapper">
 
-  <header>
-    <div class="logo">Kavalkaran</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <nav>
-      <ul id="nav-links">
-        <li><a href="docs/privacy-policy">privacy policy</a></li>
-        <li><a href="open">website</a></li>
-        <li><a href="contact">contact us</a></li>
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- PAGE TRANSITION -->
+<div class="page-transition"></div>
+<nav class="navbar navbar-expand-lg kav-nav fixed-top">
+  <div class="container">
+
+    <!-- LOGO + SITE NAME -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets/logo.jpg" alt="Kavalkaran Logo" class="nav-logo" width="50px">
+      <span class="site-name">KAVALKARAN</span>
+    </a>
+
+    <!-- HAMBURGER -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#kavNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- LINKS -->
+    <div class="collapse navbar-collapse justify-content-end" id="kavNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sites">Platforms</a></li>
+        <li class="nav-item"><a class="nav-link" href="privacy-policy.html">Privacy Policy</a></li>
+        <li class="nav-item">
+          <a class="btn nav-cta" href="pricing.html">Buy Premium</a>
+        </li>
       </ul>
-    </nav>
-  </header>
-
-  <section class="projects">
-    <div class="project" id="tool1">
-     
-      <h3>Open source code</h3>
-      <p>Kavalkaran is a open source platform. But remixing and publish it needed permission of Its owners.</p>
-      <a href="https://github.com/athulweb/kavalkaran">View code</a>
     </div>
 
-    <div class="project" id="secure" >
-      <h3>Your opinion</h3>
-      <p>We respect your opinion and you have right to say and we have duty to hear it. Enter your opinion and ideas we will use it and that is help full for tomorrows world.</p>
-      <a href="https://github.com/athulweb/kavalkaran/discussions/1">Ask your opinion</a>
+  </div>
+</nav>
+
+
+<main data-barba="container" data-barba-namespace="home">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="parallax bg rellax" data-rellax-speed="-4"></div>
+  <div class="hero-content">
+    <h1 data-aos="fade-up">The Guardian of the Common Man</h1>
+    <p data-aos="fade-up" data-aos-delay="200">
+      Empowering Citizens with Simple Cybersecurity Tools and Awareness
+    </p>
+    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+      <a href="#about"><button class="bbtn btn-primary">Explore</button></a>
+      <a href="pricing.html"><button class="bbtn btn-secondary">Buy Premium</button></a>
+    </div>
+  </div>
+</section>
+
+<div class="s-section" id="about">
+    <div class="s-image">
+      <img src="assets/about-image.png" alt="Event" />
+    </div>
+    <div class="s-text">
+      <h2>What is kavalkaran </h2>
+      <p>Kavalkaran is a public-interest cybersecurity initiative focused on
+        awareness, prevention, and reporting of cyber threats for citizens.</p>
+    </div>
+  </div>
+
+<!-- AWARDS -->
+<section id="awards" class="section light" data-aos="zoom-in">
+  <h1>Award Winning Project</h1>
+  <p>Young Innovators Program – Government of Kerala</p>
+  <div class="award-badge">
+    <img src="assets/yip.jpg" alt="Award Badge" />
+  </div>
+</section>
+
+<!-- SITES -->
+<section id="sites" class="section dark-zone">
+  <div class="dark-box">
+    
+    <h1 class="section-title">Our Platforms</h1>
+
+    <div class="neon-grid">
+      <a href="https://kavalkaran.onrender.com/open">
+        <div class="neon-card tilt" data-aos="fade-right">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Kavalkaran Web</h3>
+        <p>Main Website of Kavalkaran With Every Tool for common Man</p>
+      </div> </a>
+
+      <a href="https://kavalkaran.pythonanywhere.com/">
+        <div class="neon-card tilt" data-aos="fade-up">
+          <i class="fa-solid fa-crown"></i>
+          <h3>Kavalkaran Pro</h3>
+          <p>This has Ultimate Legit features in affordable price</p>
+        </div>
+      </a>
+      <a href="https://chat.whatsapp.com/KwJrGRVYygV7IEm8vjtggR">
+        <div class="neon-card tilt" data-aos="fade-left">
+          <i class="fa-solid fa-message"></i>
+          <h3>Kavalkaran Whatsapp Community</h3>
+          <p>Ask Your doubts , Talk to Cyber Security Experts</p>
+        </div>
+      </a>
+
+      <a href="https://github.com/kavalkaran/">
+        <div class="neon-card tilt" data-aos="fade-left">
+          <i class="fa-solid fa-hammer"></i>
+          <h3>Open source</h3>
+          <p>Kavalkaran 's Free version is Open source</p>
+        </div>
+      </a>
     </div>
 
-    <div class="project" id="bhram">
-      
-      <h3>view website</h3>
-      <p>If you have dont visited our site before. so you are late. please visit our site </p>
-      <a href="https://athulweb.github.io/kavalkaran/">Visit kavalkaran</a>
+  </div>
+</section>
+<!-- Features-->
+  <section class="features">
+    <div class="f-container">
+      <h2 class="f-section-title">Key Features</h2>
+      <p class="f-section-subtitle">
+        "Kavalkaran is not a Service , It's A massive Combo !".
+      </p>
+
+      <div class="f-features-grid">
+        <div class="f-feature-card">
+          <div class="f-icon">🎨</div>
+          <h3>UI & UX</h3>
+          <p>Kavalkaran Offers User freindly , Simple and easy User Interface.</p>
+        </div>
+
+        <div class="f-feature-card">
+          <div class="f-icon">📣</div>
+          <h3>Social</h3>
+          <p>Kavalkaran has a strong social presence and community engagement.</p>
+        </div>
+
+        <div class="f-feature-card">
+          <div class="f-icon">💡</div>
+          <h3>Innovation</h3>
+          <p>Kavalkaran is fully made using Innovation and Massive Technology.</p>
+        </div>
+
+        <div class="f-feature-card">
+          <div class="f-icon">💻</div>
+          <h3>For common man</h3>
+          <p>Kavalkaran Can give Common people a industry level tool simplified on it's max , and ready to self use.</p>
+        </div>
+
+        <div class="f-feature-card">
+          <div class="f-icon">💬</div>
+          <h3>Support</h3>
+          <p>Kavalkaran provides support for all its users. At max us possible</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("nav-links").classList.toggle("show");
-    }
-  </script>
+<!-- CONTACT -->
+<section id="contact" class="section light" data-aos="fade-up">
+  <h1>Contact</h1>
+  <p><i class="fa-solid fa-envelope"></i> kavalkaran@outlook.com</p>
+  <p><i class="fa-solid fa-globe"></i> kavalkaran.onrender.com/</p>
+</section>
 
+<!-- NIC FOOTER -->
+<footer class="mega-footer">
+  <div class="footer-bottom">
+    © 2026 Kavalkaran | We are here to protect you.
+    <br><a href="terms-services.html">Terms and services </a> | <a href="privacy-policy.html"> Privacy Policy</a>
+  </div>
+</footer>
+
+</main>
+
+<!-- LIBRARIES -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/rellax/rellax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.0/dist/vanilla-tilt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
