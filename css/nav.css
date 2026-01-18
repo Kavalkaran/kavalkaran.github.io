@@ -1,0 +1,126 @@
+/* ===============================
+   KAVALKARAN GOV NAVBAR
+   =============================== */
+
+.kav-nav {
+  background: linear-gradient(
+    180deg,
+    rgba(6, 20, 45, 0.98),
+    rgba(4, 14, 32, 0.98)
+  );
+  border-bottom: 1px solid rgba(0, 140, 255, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 80, 160, 0.35);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+/* LOGO */
+.nav-logo {
+  height: 42px;
+  width: auto;
+  margin-right: 12px;
+}
+
+/* SITE NAME */
+.site-name {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  color: #e6f1ff;
+}
+
+/* ===============================
+   NAV LINKS
+   =============================== */
+
+.kav-nav .nav-link {
+  color: #cbd5f5;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 12px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* HOVER UNDERLINE (GOV STYLE) */
+.kav-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+  transition: width 0.3s ease;
+}
+
+.kav-nav .nav-link:hover {
+  color: #e6f1ff;
+}
+
+.kav-nav .nav-link:hover::after,
+.kav-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* ACTIVE LINK */
+.kav-nav .nav-link.active {
+  color: #ffffff;
+}
+
+/* ===============================
+   CTA BUTTON
+   =============================== */
+
+.nav-cta {
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #ffffff !important;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  margin-left: 16px;
+  box-shadow: 0 0 18px rgba(14, 165, 233, 0.45);
+  transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+}
+
+/* ===============================
+   HAMBURGER ICON (DARK MODE)
+   =============================== */
+
+.navbar-toggler {
+  border: 1px solid rgba(0, 140, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ===============================
+   MOBILE MENU
+   =============================== */
+
+@media (max-width: 991px) {
+  .kav-nav .navbar-collapse {
+    background: rgba(4, 14, 32, 0.98);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 12px;
+  }
+
+  .kav-nav .nav-link {
+    margin: 10px 0;
+  }
+
+  .nav-cta {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+  }
+}

@@ -1,0 +1,168 @@
+/* ===============================
+   ROOT & RESET
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111;
+}
+
+/* ===============================
+   PRICING SECTION
+================================ */
+.pricing-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.pricing-header h1 {
+  font-size: 2.6rem;
+  color: #b38a2e; /* gold */
+}
+
+.pricing-header p {
+  color: #555;
+  margin-top: 10px;
+}
+
+/* ===============================
+   GRID
+================================ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* ===============================
+   CARDS
+================================ */
+.pricing-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  position: relative;
+  text-align: center;
+}
+
+.pricing-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2.2rem;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.strike {
+  text-decoration: line-through;
+  font-size: 1.2rem;
+  color: #999;
+  margin-right: 8px;
+}
+
+.tagline {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   FEATURES
+================================ */
+.features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.features li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.features i {
+  color: #b38a2e;
+  margin-right: 10px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.free-btn {
+  background: #111;
+  color: #fff;
+}
+
+.pro-btn {
+  background: linear-gradient(135deg, #d4af37, #b38a2e);
+  color: #fff;
+}
+
+/* ===============================
+   PRO CARD SPECIAL
+================================ */
+.pro {
+  border: 2px solid #d4af37;
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  background: linear-gradient(135deg, #d4af37, #b38a2e);
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    padding: 35px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-header h1 {
+    font-size: 2rem;
+  }
+
+  .price {
+    font-size: 1.9rem;
+  }
+}

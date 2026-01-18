@@ -1,0 +1,45 @@
+:root {
+    --color-button-dark: #3a3a3a;
+    --color-button-light: #ffffff;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Button Base Style */
+.bbtn {
+    padding: 15px 35px;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 2px solid;
+    transition: all 0.3s;
+}
+
+/* LEARN MORE Button (Dark on Light) */
+.btn-primary {
+    background-color: var(--color-button-light);
+    color: var(--color-button-dark);
+    border-color: var(--color-button-light);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-button-light);
+}
+
+/* PURCHASE IT Button (Light on Dark/Transparent) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-button-light);
+    border-color: var(--color-button-light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-button-light);
+    color: var(--color-button-dark);
+}
