@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kavalkaran Documentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dosc.css">
+<link rel="stylesheet" href="css/backtohome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" href="icons/android-chrome-512x512.png">
+<link rel="icon" type="image/png" href="icons/android-chrome-192x192.png">
+
+</head>
+<body>
+    <!-- BACK TO HOME BUTTON -->
+<a href="index.html" class="back-home-btn" title="Back to Home">
+  <i class="fa-solid fa-house"></i> Home
+</a>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <h1>Kavalkaran Docs</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search documentation..." />
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="doc-layout">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <h3>Getting Started</h3>
+    <a href="#intro">Introduction</a>
+    <a href="#access">Platform Access</a>
+
+    <h3>User Guides</h3>
+    <a href="#reports">Submitting Reports</a>
+    <a href="#dashboard">Dashboard Usage</a>
+
+    <h3>Security</h3>
+    <a href="#data">Data Handling</a>
+    <a href="#limitations">Limitations</a>
+
+    <h3>Legal</h3>
+    <a href="#privacy">Privacy Compliance</a>
+    <a href="#terms">Terms Reference</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content" id="content">
+
+    <section>
+      <h2 id="intro">Introduction</h2>
+      <p>
+        Kavalkaran is a public-interest cybersecurity tools and awareness
+        platform designed to assist citizens in understanding and responding
+        to common cyber threats. This documentation provides general operational
+        guidance for users.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="access">Platform Access</h2>
+      <p>
+        You can access Kavalkaran through web browsers on desktop and mobile
+        devices. No special software installation is required. Ensure your
+        browser is up to date for the best experience.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tools">How to use tools</h2>
+      <p>
+        Kavalkaran offers various cybersecurity tools such as link scanners,
+        file lockers, QR code Saftey Checker. Navigate to the respective tool
+        sections on the platform to utilize these features.
+      </p>
+      <ul>
+        <li>Ensure information accuracy</li>
+        <li>Avoid submission of false data</li>
+        <li>Do not include unnecessary personal information</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 id="dashboard">Dashboard Usage</h2>
+      <p>
+        The dashboard provides summarized views of alerts, awareness materials,
+        and system notifications. Displayed information may be delayed or
+        incomplete depending on system conditions.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="data">Data Handling</h2>
+      <p>
+        Data processed within the platform is handled in accordance with
+        applicable policies and technical safeguards. No absolute guarantee
+        is made regarding data retention or persistence.
+      </p>
+    </section>
+
+    <section id="limitations">
+      <h2>Limitations</h2>
+      <p>
+        Kavalkaran does not guarantee prevention, investigation, or resolution
+        of cyber incidents. The platform is informational in nature and does
+        not replace official law enforcement or professional services.
+      </p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Compliance</h2>
+      <p>
+        User data may be processed in accordance with published privacy
+        documentation. Continued use of the platform implies acceptance of
+        such policies.
+      </p>
+    </section>
+
+    <section id="terms">
+      <h2>Terms Reference</h2>
+      <p>
+        Use of the platform is subject to the Terms of Service. Users are
+        responsible for reviewing and complying with all applicable terms.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<!-- SEARCH SCRIPT -->
+<script>
+const searchInput = document.getElementById("searchInput");
+const content = document.getElementById("content");
+const sidebar = document.getElementById("sidebar");
+
+searchInput.addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+
+  // Search content sections
+  content.querySelectorAll("section").forEach(section => {
+    section.style.display =
+      section.innerText.toLowerCase().includes(query) ? "block" : "none";
+  });
+
+  // Search sidebar links
+  sidebar.querySelectorAll("a").forEach(link => {
+    link.style.display =
+      link.innerText.toLowerCase().includes(query) ? "block" : "none";
+  });
+});
+</script>
+
+</body>
+</html>
