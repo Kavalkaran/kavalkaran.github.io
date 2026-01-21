@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us – Kavalkaran</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+  }
+
+  .container {
+    max-width: 520px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: #0d6efd;
+    margin-bottom: 25px;
+  }
+
+  .section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .call {
+    background: #0d6efd;
+  }
+
+  .whatsapp {
+    background: #25D366;
+  }
+
+  /* Floating Buttons */
+  .float-btn {
+    position: fixed;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    line-height: 55px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    text-decoration: none;
+  }
+
+  .float-enquiry-call { bottom: 160px; background: #0d6efd; }
+  .float-enquiry-wa   { bottom: 90px;  background: #25D366; }
+  .float-help-call    { bottom: 20px;  background: #6f42c1; }
+  .float-help-wa      { bottom: -50px; background: #198754; }
+
+  @media(max-width:600px){
+    .float-help-wa { bottom: 20px; }
+    .float-help-call { bottom: 90px; }
+    .float-enquiry-wa { bottom: 160px; }
+    .float-enquiry-call { bottom: 230px; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Contact Kavalkaran</h1>
+
+  <!-- OFFICIAL ENQUIRIES -->
+  <div class="section">
+    <h2>🏢 Official Enquiries</h2>
+    <div class="info">
+      Business, partnerships, invitations, media enquiries  
+      <br><small>Timing: 9:00 AM -  10:00 PM</small>
+    </div>
+
+    <a href="tel:+919539218900" class="btn call">
+      📞 Call – Official Enquiries
+    </a>
+
+    <a href="https://wa.me/919539218900?text=Hello%20Kavalkaran%20Team,%20I%20have%20an%20official%20enquiry."
+       target="_blank" class="btn whatsapp">
+      💬 WhatsApp – Official Enquiries
+    </a>
+  </div>
+
+  <!-- EVENT HELP DESK -->
+  <div class="section">
+    <h2>🛠 Event Help Desk</h2>
+    <div class="info">
+      Meeting access, technical issues, login help  
+      <br><small>Available during event hours</small>
+    </div>
+
+    <a href="tel:+918907380449" class="btn call">
+      📞 Call – Event Help Desk
+    </a>
+
+    <a href="https://wa.me/918907380449?text=Hello%20Kavalkaran%20Helpdesk,%20I%20need%20assistance."
+       target="_blank" class="btn whatsapp">
+      💬 WhatsApp – Event Help Desk
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
